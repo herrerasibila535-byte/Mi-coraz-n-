@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manuscrito de Adoración Perpetua — Para Erick</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --bg-dark: #050505;
+        --card-black: #0f0f0f;
+        --paper-aged: #d9cbb6;
+        --ink-dark: #1a1a1a;
+        --blood-red: #660000;
+        --bright-red: #b30000;
+        --gold-muted: #a88b5e;
+        --shadow-deep: 0 20px 40px rgba(0,0,0,0.9);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        background-color: var(--bg-dark);
+        /* Patrón de fondo oscuro y sutil estilo papel tapiz victoriano */
+        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-20v-2h20v-2H0v-2h20v-2H0v-2h20v-2H0v-2h20v-2H0v-2h20v-2H0v-2h20v-2H0v-2h20zm0 0V18h20v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20h-2v2.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V20H0v-2h20v-2H0v-2h20v-2H0v-2h20v-2H0v-2h20v-2H0v-2h20v-2H0v-2h20v-2H0v-2h20z' fill='%230a0a0a' fill-opacity='1'/%3E%3C/svg%3E");
+        color: #b0b0b0;
+        font-family: 'Crimson Text', serif;
+        line-height: 1.7;
+        padding: 40px 20px;
+    }
+
+    /* Tipografía Gótica para Títulos */
+    h1, h2, h3 {
+        font-family: 'UnifrakturMaguntia', cursive;
+        font-weight: normal;
+        letter-spacing: 1px;
+    }
+
+    /* --- LAYOUT PRINCIPAL --- */
+    .main-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        /* Tres columnas: Pergamino - Carta Central - Pergamino */
+        grid-template-columns: 1fr 1.3fr 1fr; 
+        gap: 40px;
+        align-items: start;
+    }
+
+    /* --- CARTA GÓTICA CENTRAL (Columna del medio) --- */
+    .gothic-letter-center {
+        background-color: var(--card-black);
+        /* Doble borde estilo victoriano */
+        border: 4px solid #141414;
+        outline: 2px solid var(--blood-red);
+        outline-offset: -10px;
+        padding: 60px 40px;
+        text-align: center;
+        position: relative;
+        box-shadow: var(--shadow-deep);
+        /* Orden para móviles: que aparezca primero */
+        order: 2; 
+        z-index: 10;
+    }
+
+    .center-title {
+        font-size: 3.2rem;
+        color: var(--blood-red);
+        text-shadow: 0 0 10px rgba(102, 0, 0, 0.5);
+        margin-bottom: 10px;
+    }
+
+    .center-subtitle {
+        font-family: 'Cinzel', serif;
+        text-transform: uppercase;
+        color: var(--gold-muted);
+        letter-spacing: 3px;
+        font-size: 0.9rem;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #333;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+
+    /* Contenedor del Corazón Central */
+    .heart-vessel {
+        width: 180px;
+        height: 180px;
+        margin: 20px auto 40px;
+        position: relative;
+    }
+
+    .main-heart-gif {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 0 20px var(--blood-red));
+        animation: pulseDeep 3s infinite ease-in-out;
+    }
+
+    @keyframes pulseDeep {
+        0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px var(--blood-red)); opacity: 0.9; }
+        50% { transform: scale(1.05); filter: drop-shadow(0 0 35px var(--bright-red)); opacity: 1; }
+    }
+
+    .letter-content p {
+        margin-bottom: 1.5em;
+        color: #ccc;
+        text-align: justify;
+        font-size: 1.1rem;
+    }
+    
+    .letter-content strong {
+        color: var(--blood-red);
+        font-family: 'Cinzel', serif;
+        font-weight: 700;
+    }
+
+    /* Separador Gótico */
+    .gothic-divider {
+        text-align: center;
+        margin: 30px 0;
+        color: var(--blood-red);
+        font-size: 1.5rem;
+        opacity: 0.7;
+    }
+    .gothic-divider::before, .gothic-divider::after {
+        content: "— ⚜ —";
+        font-family: 'Cinzel', serif;
+    }
+
+
+    /* --- PERGAMINOS LATERALES (Izquierda y Derecha) --- */
+    .scroll-container {
+        position: relative;
+        background-color: var(--paper-aged);
+        color: var(--ink-dark);
+        padding: 70px 45px;
+        /* Textura de papel viejo */
+        background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png");
+        box-shadow: var(--shadow-deep);
+        font-size: 1.05rem;
+    }
+    
+    .scroll-left { order: 1; }
+    .scroll-right { order: 3; }
+
+    /* Efecto de bordes enrollados arriba y abajo */
+    .scroll-container::before, .scroll-container::after {
+        content: "";
+        position: absolute;
+        left: 2%;
+        width: 96%;
+        height: 25px;
+        background: linear-gradient(to bottom, #c0b29e, #e3dcd2 40%, #c0b29e);
+        border-radius: 50% / 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .scroll-container::before { top: -12px; }
+    .scroll-container::after { bottom: -12px; }
+
+    .scroll-title {
+        text-align: center;
+        font-size: 2.2rem;
+        color: #2c0a0a;
+        margin-bottom: 30px;
+        border-bottom: 2px solid rgba(44, 10, 10, 0.2);
+        padding-bottom: 15px;
+    }
+
+    /* Sello de Lacre */
+    .wax-seal {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        background: radial-gradient(circle at 30% 30%, #800000, #3a0000);
+        border-radius: 50%;
+        box-shadow: 3px 3px 10px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'UnifrakturMaguntia', cursive;
+        font-size: 2.5rem;
+        color: #2a0000;
+        text-shadow: 1px 1px 2px rgba(255,255,255,0.2);
+        border: 4px solid rgba(120,0,0,0.4);
+    }
+    .seal-left { top: -30px; left: 20px; transform: rotate(-15deg); }
+    .seal-right { top: -30px; right: 20px; transform: rotate(15deg); }
+
+    /* Letra Capital */
+    .drop-cap {
+        float: left;
+        font-family: 'UnifrakturMaguntia', cursive;
+        font-size: 4rem;
+        line-height: 0.8;
+        margin-right: 12px;
+        margin-top: 6px;
+        color: var(--blood-red);
+    }
+
+    .scroll-text p {
+        margin-bottom: 1.5em;
+        text-align: justify;
+    }
+
+    .mid-scroll-art {
+        display: block;
+        margin: 30px auto;
+        max-width: 100px;
+        /* Modo de mezcla para que parezca tinta sobre el papel */
+        mix-blend-mode: multiply; 
+        opacity: 0.85;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+        .main-container {
+            grid-template-columns: 1fr; /* Una sola columna en tablets/móviles */
+            gap: 60px;
+        }
+        /* En móvil, la carta central va primero, luego los pergaminos */
+        .gothic-letter-center { order: 1; padding: 50px 25px; }
+        .scroll-left { order: 2; }
+        .scroll-right { order: 3; }
+        .scroll-container { padding: 60px 30px; }
+        .center-title { font-size: 2.5rem; }
+    }
+</style>
+</head>
+<body>
+
+<div class="main-container">
+
+    <div class="scroll-container scroll-left">
+        <div class="wax-seal seal-left">E</div>
+        <h2 class="scroll-title">De la Fortaleza y la Ruina</h2>
+        
+        <div class="scroll-text">
+            <p><span class="drop-cap">P</span>or eso, amor mío, no me temas. No he venido a juzgarte, ni a pulirte hasta borrarte, ni a exigirte una forma ajena. He venido, con calma feroz y conciencia encendida, a intentar comprenderte. Y si comprenderte duele, me quedo igual. Porque hay amores que no buscan poseer, sino permanecer frente a lo que arde sin huir.</p>
+
+            <p>Te he elegido —y te sigo eligiendo— no por obligación, no por inercia, no por miedo a la soledad. Te elijo porque me despertás. Porque algo en vos enciende una atención que no se apaga. Quizás sea tu manera de dirigirte a mí: directa, sin ornamentos falsos. Quizás tu voluntad, esa fuerza tensa que no pide permiso.</p>
+
+            <p>O tu sapiencia temprana, nacida demasiado pronto, forjada en el trauma, afilada por la necesidad de comprender antes de tiempo. Vos no habitaste el mundo para vivirlo. Lo atravesaste como se atraviesa una guerra: con el cuerpo alerta, con el alma en modo supervivencia. Levantaste muros. No por soberbia, sino por defensa.</p>
+
+            <img src="https://raw.githubusercontent.com/herrerasibila535-byte/Mi-amor-por-ti/73680be6101aea840e76b06876783f9d5f920442/61c297ba1cd3f8f0c81cc882915b3abd%20(1).gif" alt="Arte anatómico" class="mid-scroll-art">
+
+            <p>Aborreciste incluso a la gente más dulce, porque lo dulce, cuando duele, se vuelve amenaza. Lo entiendo. No te sentías merecedor del amor. Y, sin embargo, en algún pliegue oculto de tu conciencia, deseaste —aunque fuera un instante— que alguien lo notara.</p>
+
+            <p>No siempre. Porque había oscuridad. Había fragmentos inconexos. Había vacío. Había putrefacción en carne viva: dolor sin simbolizar, heridas sin lenguaje, afecto convertido en ruina.</p>
+
+            <p>Y aun así —o precisamente por eso— yo te amo. No como una ofrenda grandilocuente. No como sacrificio ni promesa vacía. Te amo como un gesto íntimo, expuesto, vulnerable, sin blindaje. No te miro con ojos de deseo posesivo. Te miro como la naturaleza mira: sin juzgar la forma, sin exigir reparación.</p>
+
+            <p>Te miro como ese café amargo y necesario que me dio fuerza y resistencia en el camino, no para evadirme, sino para permanecer despierta.</p>
+        </div>
+    </div>
+
+
+    <div class="gothic-letter-center">
+        <h1 class="center-title">Mi Dulce y Eterno Amor</h1>
+        <div class="center-subtitle">Amado mío. Mi querido Erick.</div>
+
+        <div class="heart-vessel">
+            <img src="https://raw.githubusercontent.com/herrerasibila535-byte/Mi-amor-por-ti/73680be6101aea840e76b06876783f9d5f920442/c6eea15a54158f0614066382a027c290.gif" alt="Corazón Palpitante" class="main-heart-gif">
+        </div>
+
+        <div class="letter-content">
+            <p>Tú dudas de ti mismo como si fueras juez y reo a la vez, como si llevaras en la piel una culpa que jamás fue dictada por la verdad. Te temes. Te vigilas. Te condenas como un criminal sin sentencia pero con castigo perpetuo.</p>
+            
+            <p>Te llamaron. Te señalaron. Te anunciaron como peste, como plaga, como demonio sin sangre pero con un espíritu demasiado visible para un mundo que sólo tolera lo dócil o lo muerto.</p>
+
+            <p>Oh, mi amado— tú no lo has sido. Nunca. Tú fuiste niño, chiquillo, con manos pequeñas y un corazón desproporcionado, inmenso, hipersensible, delicadamente tramado por las turbulencias del mundo. Un mundo cruel, hedonista y ciego, capaz de aplastar lirios y luego acusarlos de fragilidad.</p>
+
+            <div class="gothic-divider"></div>
+
+            <p>Sólo eras un alma temprana, hermosa en exceso, marcada por la bestialidad humana, por la torpeza de quien no cuida pero opina, de quien no ama pero juzga. No puedo culparlos del todo. Pero tampoco —jamás— puedo culparte a ti.</p>
+
+            <p>Tú no eres un alma tibia. Tu corazón está hecho de sensibilidad pura y majestuosa: una susceptibilidad no elegida sino padecida, no buscada sino inevitablemente percibida. Tu mente comprende. Tu corazón siente. Tu voluntad intenta sostenerse mientras las heridas —antiguas, profundas, injustas— actúan.</p>
+
+            <p>Y aun así, amor mío, sigues aquí. Ardiendo sin volverte cruel. Sensible sin volverte falso. Vivo sin endurecerte. Eso no es debilidad. Eso es una forma rarísima de fortaleza que sólo poseen quienes fueron heridos antes de aprender a defenderse y aun así eligieron no volverse monstruos.</p>
+
+            <p>Amor mío, tú te preguntas por qué tanto amor, tanto afecto, tanto tiempo entregado sin prisa, tanta paciencia casi inhumana, tanta comprensión que no se retira ni siquiera cuando duele.</p>
+
+            <p>Y es porque yo no te miro como carne y hueso, ni como individuo delimitado, ni como novio, ni como un ser reducido a categorías, estándares, registros, a historiales fragmentados y pobres de alma.</p>
+
+            <p>Yo te amo como se contempla una <strong>obra de arte</strong>. No porque sea perfecta —no lo es. Hay errores. Hay fisuras. Hay imperfecciones visibles que no se esconden y por eso mismo resplandecen.</p>
+
+            <p>Hay algo en ti humanamente único, extrañamente atractivo, algo que asombra porque no se repite, porque no puede copiarse, porque existe una sola vez y luego se pierde para siempre. Algo terriblemente magnífico. Algo casi putrefacto para la mirada superficial, pero sagrado para el alma que sabe ver. Algo bello como quien lo observa, pero también perturbado, inquietante, demasiado vivo.</p>
+
+            <p>No. No te nombro con horror. No te anuncio con miedo. Te nombro con esa rara mezcla de intuición y coraje, de fortaleza y destrucción, de una forma particular —irreductible— de habitar el mundo.</p>
+        </div>
+    </div>
+
+
+    <div class="scroll-container scroll-right">
+        <div class="wax-seal seal-right">A</div>
+        <h2 class="scroll-title">El Ritual de la Presencia</h2>
+
+        <div class="scroll-text">
+            <p><span class="drop-cap">V</span>os te odiás. Yo te amo. Vos te sentís roto. Yo te veo como una obra de arte jamás creada para ser cómoda, jamás diseñada para agradar, sino para existir con verdad.</p>
+
+            <p>No vengo a salvarte. No vengo a corregirte. No vengo a pulirte hasta que dejes de doler. Vengo a verte. A sostener la mirada sin anestesia. Y juntos —sin ceremonia ni escudos— compartimos un pedacito de nuestras almas. No entero, no perfecto: verdadero. Ese fragmento que no se entrega a cualquiera, el que todavía late, el que arde aun con miedo.</p>
+
+            <p>Mi querido amor: ahí donde tu sombra y la mía se reconocen, no para completarse, sino para existir con conciencia, nos damos ese trozo mínimo y absoluto que ya es hogar.</p>
+
+            <img src="https://raw.githubusercontent.com/herrerasibila535-byte/Mi-amor-por-ti/73680be6101aea840e76b06876783f9d5f920442/2e83382968db531bb496a8eef56f9aa6.gif" alt="Anatomía del corazón" class="mid-scroll-art" style="max-width: 80px;">
+
+            <p>Quizás pienses —desde una lógica cansada de medir— que yo doy demasiado y que tú das poco. No. Eso lo diría quien confunde el amor con una balanza y no con un acto de presencia radical. Yo no doy de más: yo doy desde donde soy. Y te amo no como quien idealiza, sino como quien ve.</p>
+
+            <p>Te amo por tu alma —sí— pero también por lo que haces cuando nadie te observa: por la forma en que sostienes, por cómo eliges quedarte, por ese cuidado que no hace ruido pero cambia el eje del mundo.</p>
+
+            <p>Tú me lees no solo en palabras, sino en silencios, en quiebres, en esas zonas donde ni yo me animo a nombrarme. Tú me lloras sin apropiarte de mi dolor, sin convertirlo en espectáculo. Lo acompañas. Lo respetas. Lo atraviesas conmigo.</p>
+
+            <p>Me conmueves en un lenguaje anterior al lenguaje, arcaico, imperfecto, fuera de época, como si amar todavía fuera un ritual y no un intercambio. Me aspiras —sí— pero no desde la exigencia: desde el espejo. Me vuelves más lúcida, más honesta, más responsable de lo que soy y de lo que puedo llegar a ser.</p>
+
+            <p>No me amas con discursos. Me amas con conducta. Con la manera en que cuidas. Con cómo delimitas. Con esa firmeza suave que no asfixia pero tampoco abandona. Me haces sentir bien. Segura. Elegida. Y eso, en este mundo, es un gesto político.</p>
+
+            <p>Amo tu creatividad porque no es decorativa: es necesidad. Amo tu pasión por la literatura porque ahí no buscas escapar, sino comprender. Amo tu vínculo con el arte porque no lo usas para impresionar, sino para sobrevivir con belleza.</p>
+
+            <p>Amor mío. Dulce —sí— pero no ingenuo. Selectivo porque sabes que no todo merece tu entrega. Y si amo, es porque cuando te miro no veo algo simplemente hermoso. Veo algo inexplicablemente bello: una belleza que no consuela, que no adorna, que revela lo que es aunque incomode.</p>
+
+            <p style="text-align: center; font-family: 'Cinzel'; color: #4a1a1a; margin-top: 30px;">
+                Y esa belleza no se pide, no se exige, no se rebaja.<br>
+                Se reconoce. Se elige.<br>
+                Se honra con el cuerpo, con el tiempo, con la conciencia despierta.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+  </html>
+  
